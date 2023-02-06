@@ -1,7 +1,5 @@
-.titulo{
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
+ion-title{
+    color: darkorange;
 }
 h1{
     font-size: 20px;
@@ -10,13 +8,12 @@ h1{
 .container{
     display: flex;
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 3%;
     padding-bottom: 15%;
     padding: 40px;
 }
 
 #button{
-    margin-left: 135px;
     background-color: darkorange;
     color: white;
 }

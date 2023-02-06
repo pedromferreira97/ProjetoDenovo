@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-img class="dsp-block" itemprop="logo" src="https://www.rj.senac.br/wp-content/webp-express/webp-images/themes/senac-def-2021/images/logo.png.webp" alt="Senac RJ"></ion-img>
+    <ion-title class="ion-text-center">Configuração</ion-title>
     <ion-menu-button class="botão" slot="start"></ion-menu-button>
     <ion-back-button style="right: 16px; top: 8px; position: absolute; color: darkorange;"></ion-back-button>
   </ion-toolbar>
@@ -9,39 +9,38 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </ion-header>
-
 <ion-content>
-  <div class="titulo">
-    <h1><b>Configuração</b></h1>
-    </div>
-
+  
   <div class="container">
+    
     <form [formGroup]="form" (submit)="cadastrar()">
       <div class="form-floating">
         <input type="text" class="form-control" formControlName="nome">
         <label for="nome">Nome:</label>
   </div>  
-  <br>
+
+    <br>
       <div class="form-floating">
         <input type="text" class="form-control" formControlName="cpf">
-        <label for="floatingInput">CPF:</label>
+        <label for="cpf">CPF:</label>
       </div>
-      <br>
+    <br>
 
       <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
         <option selected>Estado:</option>
-        <option value="Rio de Janeiro">Rio de Janeiro</option>
+        <option value="rj">Rio de Janeiro</option>
       </select>
-      <br>
-      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-        <option selected>Região:</option>
-        <option value="Interior">Interior</option>
-        <option value="Rio e Grande Rio">Rio e Grande Rio</option>
+    <br>
+      
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="regiao" id="regiao" onchange="changeSelect();">
+        <option selected value="">Região:</option>
+        <option value="interior">Interior</option>
+        <option value="rio_granderio">Rio e Grande Rio</option>
       </select>
 
-      <br>
-      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-        <option selected>Unidade:</option>
+    <br>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="unidade">
+        <option selected value="">Unidade:</option>
         <option value="angra">Senac Angra dos Reis</option>
         <option value="barradopirai">Senac Barra do Piraí</option>
         <option value="barramansa">Senac Barra Mansa</option>
@@ -108,7 +107,8 @@
       </div>
       <br>
 
-      <button type="submit" class="btn" target="" id="button" [disabled]="!form.valid">Enviar</button>
+      <ion-button expand="block" color="warning" type="submit" id="button" target="" [disabled]="!form.valid">Enviar</ion-button>
+    
     </form>
   </div>
 

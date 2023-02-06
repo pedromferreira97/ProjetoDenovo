@@ -10,13 +10,12 @@ h1{
 .container{
     display: flex;
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 3%;
     padding-bottom: 15%;
     padding: 40px;
 }
 
 #button{
-    margin-left: 135px;
     background-color: darkorange;
     color: white;
 }
@@ -29,4 +28,7 @@ h1{
 }
 .form-control{
     padding: 12px 16px;
+}
+ion-title{
+    color: darkorange;
 }

@@ -11,13 +11,12 @@ h1{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 55%;
+    margin-top: 65%;
 }
 .tab2{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
 }
 
 #button{
@@ -27,4 +26,7 @@ h1{
 .dsp-block{
     margin-left: 35%;
     width: 70px;
+}
+ion-title{
+    color: darkorange;
 }
