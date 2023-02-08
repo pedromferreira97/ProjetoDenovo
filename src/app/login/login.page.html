@@ -12,20 +12,20 @@
 
   <div class="container">
 
-    <form>
+    <form [formGroup]="form" (submit)="logar()">
       <div class="form-floating">
-        <input type="text" class="form-control">
-        <label for="nome">CPF:</label>
+        <input type="text" class="form-control" formControlName="email">
+        <label for="email">E-mail:</label>
       </div>
       <br>
 
       <div class="form-floating">
-        <input type="password" class="form-control">
+        <input type="password" class="form-control" formControlName="password">
         <label for="senha">Senha: </label>
       </div>
       <br>
       
-      <ion-button expand="block" class="btn" type="submit" routerLink="/inicio/id" color="warning">{{nameButton}}</ion-button>
+      <ion-button type="submit" expand="block" color="warning" target="" id="button">{{nameButton}}</ion-button>
 
     </form>
   </div> 
