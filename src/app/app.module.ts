@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { Injector } from '@angular/core';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,4 +20,10 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  static injector: Injector;
+
+  constructor(injector: Injector) {
+    AppModule.injector = injector;
+  }
+}

@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
+import { DisableSideMenu } from '../custom/disable-side-menu.decorator';
 import { AuthenticationService } from 'src/app/servico/authentication.service'
 import { UserauthService } from '../servico/userauth.service';
+
+@DisableSideMenu()
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -19,8 +23,7 @@ export class LoginPage implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private userauth: UserauthService
-    
-    ) { }
+    ) {}
 
   ngOnInit() {
     this.userauth.consulta().subscribe(results => {
@@ -34,6 +37,9 @@ export class LoginPage implements OnInit {
     this.validaForm();
   }
 
+  
+
+
   logar(){
 
     for(let i = 0; i < this.users.length; i++){
@@ -44,8 +50,7 @@ export class LoginPage implements OnInit {
         console.log('Usuario não encontrado!');
       }
     }
-    
-    
+  
   }
 
   validaForm(){
