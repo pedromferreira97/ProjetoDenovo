@@ -8,20 +8,20 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 
-export class FirebaseService {
+export class FirebaserService {
 
-  itemCollection: AngularFirestoreCollection
+  reparoCollection: AngularFirestoreCollection
 
   constructor(private af: AngularFirestore) { 
-    this.itemCollection = af.collection('itens');
+    this.reparoCollection = af.collection('reparo');
     
   }
 
   consultaOne(id: string){
-    return this.itemCollection.doc(id).valueChanges();
+    return this.reparoCollection.doc(id).valueChanges();
   }
   consulta(){
-    return this.itemCollection.snapshotChanges().pipe(
+    return this.reparoCollection.snapshotChanges().pipe(
       map(actions => {
         return actions.map(a => {
           const data = a.payload.doc.data();
@@ -33,13 +33,13 @@ export class FirebaseService {
     )
   }  
   cadastro(item: any){
-    return this.itemCollection.add(item)
+    return this.reparoCollection.add(item)
   }
   deletar(id: string){
-    return this.itemCollection.doc(id).delete();
+    return this.reparoCollection.doc(id).delete();
   }
   atualizar(id: string, item: any){
-    return this.itemCollection.doc(id).update(item);
+    return this.reparoCollection.doc(id).update(item);
   }
 
 

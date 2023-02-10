@@ -12,33 +12,35 @@
 
 <ion-content>
   <div class="container">
-    <form>
+    <form [formGroup]="form" (submit)="cadastrar()">
       <div class="form-floating">
-        <input type="text" class="form-control" disabled>
+        <input type="text" class="form-control" formControlName="nome" required>
         <label for="nome">Nome:</label>
-      </div>
-      <br>
+  </div>  
 
+    <br>
       <div class="form-floating">
-        <input type="text" class="form-control" disabled>
-        <label for="floatingInput">CPF:</label>
+        <input type="text" class="form-control" formControlName="cpf" required>
+        <label for="cpf">CPF:</label>
       </div>
-      <br>
-      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-        <option selected>Estado:</option>
-        <option value="1">Rio de Janeiro</option>
+    <br>
+
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" formControlName="estado" required>
+        <option value="">Estado:</option>
+        <option value="rj">Rio de Janeiro</option>
       </select>
-      <br>
-      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-        <option selected>Região:</option>
-        <option value="1">Interior</option>
-        <option value="2">Rio e Grande Rio</option>
+    <br>
+      
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"  formControlName="regiao" required>
+        <option value="">Região:</option>
+        <option value="interior">Interior</option>
+        <option value="rio_granderio">Rio e Grande Rio</option>
       </select>
 
-      <br>
-      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-        <option value="unidade">Unidade:</option>
-        <option value="angra">Senac Angra dos Reis</option>
+    <br>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" formControlName="unidade" required>
+        <option value="">Unidade:</option>
+        <option value="angradosreis">Senac Angra dos Reis</option>
         <option value="barradopirai">Senac Barra do Piraí</option>
         <option value="barramansa">Senac Barra Mansa</option>
         <option value="cabofrio">Senac Cabo Frio</option>
@@ -72,9 +74,9 @@
         <option value="saojoaodemeriti">Senac São João de Meriti</option>
       </select>
       <br>
-      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-        <option selected>Cursos:</option>
-        <option value="administração">Administração e Gestão</option>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" formControlName="curso" required>
+        <option value="">Curso:</option>
+        <option value="administracao">Administração e Gestão</option>
         <option value="audiovisual">Audiovisual</option>
         <option value="educacao">Educação</option>
         <option value="fotografia">Fotografia</option>
@@ -85,13 +87,13 @@
       </select>
       <br>
       <div class="form-floating">
-        <input type="text" class="form-control">
-        <label for="floatingInput">Sala:</label>
+        <input type="text" class="form-control" formControlName="sala" required>
+        <label for="sala">Sala:</label>
       </div>
       <br>
-      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-        <option selected>Selecione o seu problema:</option>
-        <option value="1">Defeito</option>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" formControlName="problema" required>
+        <option value="">Selecione o seu problema:</option>
+        <option value="defeito">Defeito</option>
         <option value="2">Mau contato</option>
         <option value="3">Problema com aplicativo</option>
         <option value="4">Problema no login</option>
@@ -100,11 +102,11 @@
       <br>
       <div class="form-group">
         <label for="descricao">Descrição:</label>
-        <textarea class="form-control" rows="5"></textarea>
+        <textarea class="form-control" rows="5" formControlName="descricao" required></textarea>
       </div>
       <br>
 
-      <ion-button expand="block" type="button" target="" id="button" color="warning">Enviar</ion-button>
+      <ion-button expand="block" color="warning" type="submit" id="button" target="" [disabled]="!form.valid" (click)="alert()">Enviar</ion-button>
 
      
     </form>

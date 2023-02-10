@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseService } from '../firebase.service';
+import { FirebaseService } from '../firebasec.service';
 
 @Component({
   selector: 'app-documentacao',

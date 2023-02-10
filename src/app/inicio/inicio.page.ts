@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { AlertController } from '@ionic/angular';
-import { FirebaseService } from '../firebase.service';
+import { FirebaseService } from '../firebasec.service';
 
 @Component({
   selector: 'app-inicio',

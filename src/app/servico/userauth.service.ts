@@ -11,7 +11,7 @@ export class UserauthService {
   userCollection: AngularFirestoreCollection
 
   constructor(private af: AngularFirestore) { 
-    this.userCollection = this.af.collection('user');
+    this.userCollection = this.af.collection('usuario');
   }
 
   consulta(){

@@ -15,33 +15,33 @@
     
     <form [formGroup]="form" (submit)="cadastrar()">
       <div class="form-floating">
-        <input type="text" class="form-control" formControlName="nome">
+        <input type="text" class="form-control" formControlName="nome" required>
         <label for="nome">Nome:</label>
   </div>  
 
     <br>
       <div class="form-floating">
-        <input type="text" class="form-control" formControlName="cpf">
+        <input type="text" class="form-control" formControlName="cpf" required>
         <label for="cpf">CPF:</label>
       </div>
     <br>
 
-      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-        <option selected>Estado:</option>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" formControlName="estado" required>
+        <option value="">Estado:</option>
         <option value="rj">Rio de Janeiro</option>
       </select>
     <br>
       
-      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="regiao" id="regiao">
-        <option selected value="">Região:</option>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="regiao" id="regiao" formControlName="regiao" required>
+        <option value="">Região:</option>
         <option value="interior">Interior</option>
         <option value="rio_granderio">Rio e Grande Rio</option>
       </select>
 
     <br>
-      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="unidade">
-        <option selected value="">Unidade:</option>
-        <option value="angra">Senac Angra dos Reis</option>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="unidade" formControlName="unidade" required>
+        <option value="">Unidade:</option>
+        <option value="angradosreis">Senac Angra dos Reis</option>
         <option value="barradopirai">Senac Barra do Piraí</option>
         <option value="barramansa">Senac Barra Mansa</option>
         <option value="cabofrio">Senac Cabo Frio</option>
@@ -75,9 +75,9 @@
         <option value="saojoaodemeriti">Senac São João de Meriti</option>
       </select>
       <br>
-      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" >
-        <option selected>Curso:</option>
-        <option value="administração">Administração e Gestão</option>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" formControlName="curso" required>
+        <option value="">Curso:</option>
+        <option value="administracao">Administração e Gestão</option>
         <option value="audiovisual">Audiovisual</option>
         <option value="educacao">Educação</option>
         <option value="fotografia">Fotografia</option>
@@ -88,17 +88,17 @@
       </select>
       <br>
       <div class="form-floating">
-        <input type="text" class="form-control" id="sala" formControlName="sala">
+        <input type="text" class="form-control" id="sala" formControlName="sala" required>
         <label for="sala">Sala:</label>
       </div>
       <br>
-      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-        <option selected>Selecione o seu problema:</option>
-        <option value="1">Configuração do Windows</option>
-        <option value="2">Configuração do Office</option>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" formControlName="problema" required>
+        <option value="">Selecione o seu problema:</option>
+        <option value="windows">Configuração do Windows</option>
+        <option value="office">Configuração do Office</option>
         <option value="3">Configuração de Rede</option>
         <option value="4">Configuração de Aplicativo</option>
-        <option value="4">Configuração/Update de Componentes</option>
+        <option value="5">Configuração/Update de Componentes</option>
       </select>
       <br>
       <div class="form-group">
