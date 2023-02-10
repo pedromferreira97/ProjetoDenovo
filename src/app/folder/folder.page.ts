@@ -21,7 +21,7 @@ export class FolderPage implements OnInit {
     /* this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
     this.inicio = this.activatedRoute.snapshot.paramMap.get('id') as string; */
     if(this.authetication.logoutUser()){
-      this.route.navigate(['']);
+      this.route.navigate([''], {replaceUrl: true});
     };
   }
 

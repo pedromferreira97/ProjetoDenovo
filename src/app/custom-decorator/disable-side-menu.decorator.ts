@@ -18,7 +18,6 @@ export function DisableSideMenu() {
             // Disable the side menu when entering in the page
             menuCtrl.enable(false);
 
-            console.log('Disabling side menu...');
 
             // Call the ionViewDidEnter event defined in the page
             originalDidEnter && typeof originalDidEnter === 'function' && originalDidEnter.apply(this, arguments);
@@ -31,8 +30,6 @@ export function DisableSideMenu() {
 
             // Enable the side menu when leaving the page
             menuCtrl.enable(true);
-
-            console.log('Enabling side menu...');
 
             // Call the ionViewWillLeave event defined in the page
             originalWillLeave && typeof originalWillLeave === 'function' && originalWillLeave.apply(this, arguments);

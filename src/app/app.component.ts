@@ -8,6 +8,7 @@ import { UserauthService } from './servico/userauth.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit{
+  tipoPerfil = "Usuário";
   public appPages = [
     { title: 'Início', url: '/inicio/inicio', icon: 'home' },
     { title: 'Perfil', url: '/perfil/perfil', icon: 'person' },
